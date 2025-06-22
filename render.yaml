@@ -3,7 +3,7 @@ services:
     name: propertyleadbot
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn core.wsgi:application
+    startCommand: gunicorn propertyleadbot_clean.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: core.settings
