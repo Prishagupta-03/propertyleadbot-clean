@@ -1,11 +1,6 @@
 services:
   - type: web
-    name: propertyleadbot
+    name: propertyleadbot-clean
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn propertyleadbot_clean.wsgi:application
-    envVars:
-      - key: DJANGO_SETTINGS_MODULE
-        value: core.settings
-      - key: PYTHON_VERSION
-        value: 3.10.12
+    startCommand: gunicorn core.wsgi:application
